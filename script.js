@@ -109,3 +109,19 @@ document.getElementById('cta-form').addEventListener('submit', function(event) {
         event.preventDefault();
     }
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("cta-form");
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+                alert("Please complete the reCAPTCHA!");
+                event.preventDefault();
+            }
+        });
+    } else {
+        console.error("Form with ID 'cta-form' not found.");
+    }
+});
