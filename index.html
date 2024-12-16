@@ -73,6 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <option value="51-200">51-200</option>
                         <option value="200+">200+</option>
                     </select>
+                        <div class="g-recaptcha" data-sitekey="6Lf9K50qAAAAAE2pY0HZxmR6JyoqPx0ogrRHmlbA"></div>
                     <button type="submit">Get Started</button>
                 </form>
             </div>
@@ -136,7 +137,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </a>
 </div>
 </section>
-            
+              <script>
+    // Optional: Handle form submission (client-side validation)
+    document.getElementById("my-form").addEventListener("submit", function (event) {
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        alert("Please complete the reCAPTCHA!");
+        event.preventDefault();
+      }
+    });
+  </script>
     <script src="script.js"></script>
         <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQCR3NKG"
